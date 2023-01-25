@@ -1,4 +1,5 @@
 const { stringLength, reverseString } = require('./functions');
+const calculator = require('./calculator');
 
 // Tests for stringLength function
 it('Returns the length of the string Micronaut', () => {
