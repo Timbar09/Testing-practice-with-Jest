@@ -1,7 +1,6 @@
-const stringLength = (string) => {
-  return string.length < 1 ? 'error' : string.length > 10 ? 'error' : string.length;
-};
+const { stringLength, reverseString } = require('./functions');
 
+// Tests for stringLength function
 it('Returns the length of the string Micronaut', () => {
   const str = 'Micronaut';
 
@@ -26,10 +25,7 @@ it('Returns an error message if string is less than 1', () => {
   expect(length).toBe('error');
 });
 
-const reverseString = (string) => {
-  return string.trim().split('').reverse().join('');
-};
-
+// Test for reverseString function
 it('Returns a revesed string that is not equal to the original', () => {
   const str = 'Awesome';
 
