@@ -1,4 +1,4 @@
-const { stringLength, reverseString } = require('./modules/functions');
+const { stringLength, reverseString, capitalize } = require('./modules/functions');
 const calculator = require('./modules/calculator');
 
 // Tests for stringLength function

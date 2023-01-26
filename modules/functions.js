@@ -10,4 +10,14 @@ const reverseString = (string) => {
   return string.trim().split('').reverse().join('');
 };
 
-module.exports = { stringLength, reverseString };
+const capitalize = (string) => {
+  if (typeof string !== 'string') {
+    throw new Error('Not a string');
+  }
+  // const firstLetter = string.trim().slice(0, 1).toUpperCase();
+  // const otherLetters = string.trim().slice(1).toLowerCase();
+  // const result = firstLetter + otherLetters
+  return string.trim().slice(0, 1).toUpperCase() + string.trim().slice(1).toLowerCase();
+};
+
+module.exports = { stringLength, reverseString, capitalize };
