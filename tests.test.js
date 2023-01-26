@@ -62,4 +62,82 @@ describe('calculations', () => {
 
     expect(resultDataType).toBe('number');
   });
+
+  // Subtract method tests
+  test('is 9 minus 9 equal to 0', () => {
+    const args = [9, 9];
+
+    const result = calculator.subtract(...args);
+
+    expect(result).toBe(0);
+  });
+
+  test('Throw error if both arguments are not numbers', () => {
+    const args = ['one', '8'];
+
+    expect(() => {
+      calculator.subtract(...args);
+    }).toThrow();
+  });
+
+  test('is the returned value a number', () => {
+    const args = [2, 1];
+
+    const result = calculator.add(...args);
+    const resultDataType = typeof result;
+
+    expect(resultDataType).toBe('number');
+  });
+
+  // Divide method tests
+  test('is 6 divided by 3 equal to 2', () => {
+    const args = [6, 3];
+
+    const result = calculator.divide(...args);
+
+    expect(result).toBe(2);
+  });
+
+  test('Throw error if both arguments are not numbers', () => {
+    const args = ['ten', 'five'];
+
+    expect(() => {
+      calculator.divide(...args);
+    }).toThrow();
+  });
+
+  test('is the returned value a number', () => {
+    const args = [22, 11];
+
+    const result = calculator.divide(...args);
+    const resultDataType = typeof result;
+
+    expect(resultDataType).toBe('number');
+  });
+
+  // Multiply method tests
+  test('is 1 multiplied by 7 equal to 7', () => {
+    const args = [1, 7];
+
+    const result = calculator.multiply(...args);
+
+    expect(result).toBe(7);
+  });
+
+  test('Throw error if both arguments are not numbers', () => {
+    const args = ['2', 'three'];
+
+    expect(() => {
+      calculator.multiply(...args);
+    }).toThrow();
+  });
+
+  test('is the returned value a number', () => {
+    const args = [7, 11];
+
+    const result = calculator.multiply(...args);
+    const resultDataType = typeof result;
+
+    expect(resultDataType).toBe('number');
+  });
 });
