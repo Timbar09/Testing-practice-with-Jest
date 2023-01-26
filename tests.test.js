@@ -141,3 +141,14 @@ describe('calculations', () => {
     expect(resultDataType).toBe('number');
   });
 });
+
+// Tests for capitalize method
+describe('Capitalize', () => {
+  test('Is the string capitalized', () => {
+    const str = 'miles';
+
+    const result = capitalize(str);
+
+    expect(result).toBe('Miles');
+  });
+});
