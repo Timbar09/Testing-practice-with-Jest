@@ -45,4 +45,21 @@ describe('calculations', () => {
 
     expect(result).toBe(5);
   });
+
+  test('Throw error if both arguments are not numbers', () => {
+    const args = ['2', '3'];
+
+    expect(() => {
+      calculator.add(...args);
+    }).toThrow();
+  });
+
+  test('is the returned value a number', () => {
+    const args = [7, 11];
+
+    const result = calculator.add(...args);
+    const resultDataType = typeof result;
+
+    expect(resultDataType).toBe('number');
+  });
 });
