@@ -1,5 +1,9 @@
 const stringLength = (string) => {
-  return string.length < 1 ? 'error' : string.length > 10 ? 'error' : string.length;
+  if (string.length < 1 || string.length > 10) {
+    throw new Error('Out of range');
+  }
+
+  return string.length;
 };
 
 const reverseString = (string) => {

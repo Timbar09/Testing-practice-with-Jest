@@ -1,5 +1,5 @@
-const { stringLength, reverseString } = require('./functions');
-const calculator = require('./calculator');
+const { stringLength, reverseString } = require('./modules/functions');
+const calculator = require('./modules/calculator');
 
 // Tests for stringLength function
 it('Returns the length of the string Micronaut', () => {
@@ -10,20 +10,20 @@ it('Returns the length of the string Micronaut', () => {
   expect(length).toBe(9);
 });
 
-it('Returns an error message if string is greater than 10', () => {
+it('Throws an error if string length is greater than 10', () => {
   const str = 'Micronautist';
 
-  const length = stringLength(str);
-
-  expect(length).toBe('error');
+  expect(() => {
+    stringLength(str);
+  }).toThrow();
 });
 
-it('Returns an error message if string is less than 1', () => {
+it('Throws an error if string length is less than 1', () => {
   const str = '';
 
-  const length = stringLength(str);
-
-  expect(length).toBe('error');
+  expect(() => {
+    stringLength(str);
+  }).toThrow();
 });
 
 // Test for reverseString function
@@ -33,4 +33,16 @@ it('Returns a revesed string that is not equal to the original', () => {
   const reversedStr = reverseString(str);
 
   expect(reversedStr).not.toBe(str);
+});
+
+// Tests for calculator methods
+describe('calculations', () => {
+  // Add method tests
+  test('is 2 plus 3 equal to 5', () => {
+    const args = [2, 3];
+
+    const result = calculator.add(...args);
+
+    expect(result).toBe(5);
+  });
 });
